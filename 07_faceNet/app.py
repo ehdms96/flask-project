@@ -74,7 +74,7 @@ def down_file():
 
 @app.route('/faceNet')
 def main():
-    faces_dirpath = '/root/uploads/'
+    faces_dirpath = './uploads/'
     faces_list = os.listdir(faces_dirpath)
 
     pixels1 = extract_face(faces_dirpath + faces_list[0])
@@ -115,7 +115,7 @@ def extract_face(filename, required_size=(160, 160)):
     filedir = []
     for i in filename.split('/'):
       filedir.append(i)
-    image1.save('/root/uploads/'+filedir[-1])
+    image1.save('./uploads/'+filedir[-1])
     face_array1 = np.asarray(image1)
     
     return face_array1

@@ -6,7 +6,7 @@
 
     <img src="{{ url_for('static',filename='images/download.png') }}", width="70")/><br><br>
 
-    <form action = "http://localhost:5000/fileDown" method = "POST"
+    <form action = "http://ec2-3-141-109-198.us-east-2.compute.amazonaws.com:8080/fileDown" method = "POST"
       enctype = "multipart/form-data" class="form-inline">
       <div class="col text-center">
         <input type = "text" name = "file" class="form-control"/>
