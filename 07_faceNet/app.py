@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, send_file
 from werkzeug.utils import secure_filename
-import tensorflow as tf
 import numpy as np
 from mtcnn import MTCNN as mt
 import cv2
