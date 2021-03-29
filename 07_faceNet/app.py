@@ -2,14 +2,13 @@ from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
 import os
 import numpy as np
-from facenet import face
+from facenet2 import face
 app = Flask(__name__)
 #app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024 #파일 업로드 용량 제한 단위:바이트
 
 @app.route('/face')
 def test():
-        result = face()
-        return str(result)
+        return face()
 
 #HTML 렌더링
 @app.route('/')
