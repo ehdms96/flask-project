@@ -17,8 +17,9 @@ resnet = InceptionResnetV1(pretrained='vggface2').eval().to(device)
 
 def face():
     required_size=(160, 160)
-    faces_dirpath = '/root/uploads/'
+    faces_dirpath = '/home/ubuntu/flask-project/07_faceNet/uploads/'
     faces_list = os.listdir(faces_dirpath)
+    #print("faces_list: ",faces_list)
     image1 = Image.open(faces_dirpath + faces_list[0])
     image2 = Image.open(faces_dirpath + faces_list[1])
     image1 = image1.convert('RGB')
@@ -53,7 +54,9 @@ def face():
     img_embedding1 = resnet(torch.as_tensor(np.asarray(img_cropped1)).unsqueeze(0))
     img_embedding2 = resnet(torch.as_tensor(np.asarray(img_cropped2)).unsqueeze(0))
     dists = (img_embedding1 - img_embedding2).norm().item()
-    print("dists : " + dists)
+    str(dists)
+    #print("dist : ")
+    print(dists)
     return dists
 
 face()
