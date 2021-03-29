@@ -15,7 +15,7 @@ print('Running on device: {}'.format(device))
 
 resnet = InceptionResnetV1(pretrained='vggface2').eval().to(device)
 
-def main():
+def face():
     required_size=(160, 160)
     faces_dirpath = '/root/uploads/'
     faces_list = os.listdir(faces_dirpath)

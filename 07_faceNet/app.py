@@ -1,13 +1,13 @@
 from flask import Flask, render_template, request
-from werkzeug import secure_filename
+from werkzeug.utils import secure_filename
 import os
-from facenet import main
+from facenet import face
 app = Flask(__name__)
 #app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024 #파일 업로드 용량 제한 단위:바이트
 
-@app.route('/test')
+@app.route('/face')
 def test():
-        return main()
+        return face()
 
 #HTML 렌더링
 @app.route('/')
