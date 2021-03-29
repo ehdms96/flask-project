@@ -66,5 +66,4 @@ def face():
         #pp.imshow(result_face)
     #print(faces_list[i])
     return faces_list[i]
-
 #face()
