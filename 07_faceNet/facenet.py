@@ -53,4 +53,7 @@ def face():
     img_embedding1 = resnet(torch.as_tensor(np.asarray(img_cropped1)).unsqueeze(0))
     img_embedding2 = resnet(torch.as_tensor(np.asarray(img_cropped2)).unsqueeze(0))
     dists = (img_embedding1 - img_embedding2).norm().item()
+    print("dists : " + dists)
     return dists
+
+face()
