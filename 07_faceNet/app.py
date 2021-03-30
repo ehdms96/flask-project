@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
 import os
-from facenet import face
+import numpy as np
+from facenet2 import face
 app = Flask(__name__)
 #app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024 #파일 업로드 용량 제한 단위:바이트
 
@@ -38,4 +39,4 @@ def upload_file():
 
 #서버 실행
 if __name__ == '__main__':
-	app.run(host='0.0.0.0', port=8080, debug = True)
+	app.run(host='0.0.0.0', port=8080, debug = False)
