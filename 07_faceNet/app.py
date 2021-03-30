@@ -27,7 +27,7 @@ def upload_file():
 
 #face net 실행
 @app.route('/face')
-def test()
+def test():
         return face()
 
 #서버 실행
